@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: opencode-web
+    env: docker
+    plan: free
+    dockerCommand: bun run serve
+    envVars:
+      - key: NODE_ENV
+        value: production
