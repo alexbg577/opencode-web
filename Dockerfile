@@ -3,9 +3,12 @@ FROM oven/bun:1.3.13
 WORKDIR /app
 
 COPY bun.lock package.json ./
-COPY packages ./packages
 
 RUN bun install
+
+COPY packages ./packages
+
+RUN cd packages/app && bun install
 
 COPY . .
 
